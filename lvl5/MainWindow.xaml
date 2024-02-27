@@ -1,0 +1,44 @@
+﻿<Window x:Class="lvl5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lvl5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="FirebrickColor" Color="Firebrick" />
+    </Window.Resources>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Center" Grid.Column="0">
+            <Button Content="Кнопка" Style="{StaticResource ButtonStyle}"></Button>
+            <TextBlock Text="Вывод" Style="{StaticResource TextBlockStyle}"></TextBlock>
+            <TextBox Text="Ввод" Style="{StaticResource TextBoxStyle}"></TextBox>
+        </StackPanel>
+
+        <ListView Grid.Column="1" Name="listv">
+            <ListView.Resources>
+                <SolidColorBrush x:Key="colortest" Color="PowderBlue"></SolidColorBrush>
+            </ListView.Resources>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Button Content="Текст для кнопки" Background="{StaticResource colortest}"></Button>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ComboBox Name="ComboBox1" Height="40" Grid.Column="2" Foreground="{StaticResource FirebrickColor}"/>
+
+
+    </Grid>
+</Window>
